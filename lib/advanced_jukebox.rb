@@ -12,13 +12,20 @@
 # "Graduation Failed" => '< path to this directory >/jukebox-cli/audio/Emerald-Park/07.mp3'
 # }
 
-def help
-  #this method should be the same as in jukebox.rb
-
+def help()
+  puts "I accept the following commands:"
+  puts "- help : displays this help message"
+  puts "- list : displays a list of songs you can play"
+  puts "- play : lets you choose a song to play"
+  puts "- exit : exits this program"
 end
 
 
-
+def list(my_songs)
+  my_songs.collect do |song, index|
+    puts "#{index+1}. #{song}"
+  end
+end
 def list(my_songs)
   #this method is different! Collect the keys of the my_songs hash and 
   #list the songs by name
